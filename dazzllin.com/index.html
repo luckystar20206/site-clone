@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-Us">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+        <link media="all" href="assets/css/style.css" rel="stylesheet"/>
+        <title>Dazzllin - Dazzllin Note - Everything You Need</title>
+        <meta name="description" content="Dazzllin Note - Everything You Need"/>
+        <meta name="robots" content="max-image-preview:large"/>
+        <link rel="canonical" href=".html"/>
+        <meta name="generator" content="All in One SEO (AIOSEO) 4.4.9.2"/>
+        <script type="text/javascript" src="assets/js/config.js"></script>
+        <script type="text/javascript">
+            function ai_insert(insertion, selector, insertion_code) {
+                if (selector.indexOf(":eq") != -1)
+                    var elements = jQuery(selector);
+                else
+                    var elements = document.querySelectorAll(selector);
+                Array.prototype.forEach.call(elements, function(element, index) {
+                    var ai_debug = typeof ai_debugging !== "undefined";
+                    if (element.hasAttribute("id"))
+                        selector_string = "#" + element.getAttribute("id");
+                    else if (element.hasAttribute("class"))
+                        selector_string = "." + element.getAttribute("class").replace(new RegExp(" ","g"), ".");
+                    else
+                        selector_string = "";
+                    var template = document.createElement("div");
+                    template.innerHTML = insertion_code;
+                    var ai_selector_counter = template.getElementsByClassName("ai-selector-counter")[0];
+                    if (ai_selector_counter != null)
+                        ai_selector_counter.innerText = index + 1;
+                    var ai_debug_name_ai_main = template.getElementsByClassName("ai-debug-name ai-main")[0];
+                    if (ai_debug_name_ai_main != null) {
+                        var insertion_name = "";
+                        if (insertion == "before")
+                            insertion_name = ai_front.insertion_before;
+                        else if (insertion == "after")
+                            insertion_name = ai_front.insertion_after;
+                        else if (insertion == "prepend")
+                            insertion_name = ai_front.insertion_prepend;
+                        else if (insertion == "append")
+                            insertion_name = ai_front.insertion_append;
+                        else if (insertion == "replace-content")
+                            insertion_name = ai_front.insertion_replace_content;
+                        else if (insertion == "replace-element")
+                            insertion_name = ai_front.insertion_replace_element;
+                        ai_debug_name_ai_main.innerText = insertion_name + " " + selector + " (" + element.tagName.toLowerCase() + selector_string + ")"
+                    }
+                    var range = document.createRange();
+                    var fragment = range.createContextualFragment(template.innerHTML);
+                    if (insertion == "before")
+                        element.parentNode.insertBefore(fragment, element);
+                    else if (insertion == "after")
+                        element.parentNode.insertBefore(fragment, element.nextSibling);
+                    else if (insertion == "prepend")
+                        element.insertBefore(fragment, element.firstChild);
+                    else if (insertion == "append")
+                        element.insertBefore(fragment, null);
+                    else if (insertion == "replace-content")
+                        element.innerHTML = template.innerHTML;
+                    else if (insertion == "replace-element") {
+                        element.parentNode.insertBefore(fragment, element);
+                        element.parentNode.removeChild(element)
+                    }
+                    if (ai_debug)
+                        console.log("AI INSERT", insertion, selector, "(" + element.tagName.toLowerCase() + selector_string + ")")
+                })
+            }
+            function ai_insert_viewport(element) {
+                function hasClass(element, cls) {
+                    if (element == null)
+                        return false;
+                    if (element.classList)
+                        return element.classList.contains(cls);
+                    else
+                        return (" " + element.className + " ").indexOf(" " + cls + " ") > -1
+                }
+                function addClass(element, cls) {
+                    if (element == null)
+                        return;
+                    if (element.classList)
+                        element.classList.add(cls);
+                    else
+                        element.className += " " + cls
+                }
+                function removeClass(element, cls) {
+                    if (element == null)
+                        return;
+                    if (element.classList)
+                        element.classList.remove(cls);
+                    else
+                        element.className = element.className.replace(new RegExp("(^|\\b)" + cls.split(" ").join("|") + "(\\b|$)","gi"), " ")
+                }
+                var ai_debug = typeof ai_debugging !== "undefined";
+                if (ai_debug)
+                    console.log("AI VIEWPORT INSERTION class:", element.getAttribute("class"));
+                var visible = !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+                var block = element.getAttribute("data-block");
+                if (visible) {
+                    var insertion_code = element.getAttribute("data-code");
+                    var insertion_type = element.getAttribute("data-insertion");
+                    var selector = element.getAttribute("data-selector");
+                    if (insertion_code != null)
+                        if (insertion_type != null && selector != null) {
+                            var selector_exists = document.querySelectorAll(selector).length;
+                            if (ai_debug)
+                                console.log("AI VIEWPORT VISIBLE: block", block, insertion_type, selector, selector_exists ? "" : "NOT FOUND");
+                            if (selector_exists) {
+                                ai_insert(insertion_type, selector, b64d(insertion_code));
+                                removeClass(element, "ai-viewports")
+                            }
+                        } else {
+                            if (ai_debug)
+                                console.log("AI VIEWPORT VISIBLE: block", block);
+                            var range = document.createRange();
+                            var fragment = range.createContextualFragment(b64d(insertion_code));
+                            element.parentNode.insertBefore(fragment, element.nextSibling);
+                            removeClass(element, "ai-viewports")
+                        }
+                } else {
+                    if (ai_debug)
+                        console.log("AI VIEWPORT NOT VISIBLE: block", block);
+                    var debug_bar = element.previousElementSibling;
+                    if (hasClass(debug_bar, "ai-debug-bar") && hasClass(debug_bar, "ai-debug-script")) {
+                        removeClass(debug_bar, "ai-debug-script");
+                        addClass(debug_bar, "ai-debug-viewport-invisible")
+                    }
+                    removeClass(element, "ai-viewports")
+                }
+            }
+            function b64e(str) {
+                return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) {
+                    return String.fromCharCode("0x" + p1)
+                }))
+            }
+            function b64d(str) {
+                return decodeURIComponent(atob(str).split("").map(function(c) {
+                    return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2)
+                }).join(""))
+            }
+            ;</script>
+        <meta name="generator" content="WordPress 4.9.25"/>
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0]
+                  , j = d.createElement(s)
+                  , dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'assets/js/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            }
+            )(window, document, 'script', 'dataLayer', 'GTM-MR5SQCC');
+        </script>
+        <script type="text/javascript">
+            window._tfa = window._tfa || [];
+            window._tfa.push({
+                notify: 'event',
+                name: 'page_view',
+                id: 1431958
+            });
+            !function(t, f, a, x) {
+                if (!document.getElementById(x)) {
+                    t.async = 1;
+                    t.src = a;
+                    t.id = x;
+                    f.parentNode.insertBefore(t, f);
+                }
+            }(document.createElement('script'), document.getElementsByTagName('script')[0], 'asstes/js/tfa.js', 'tb_tfa_script');
+        </script>
+        <script type="text/javascript">
+            var touchmoved;
+            $('.previous-page-link').on('touchend', function(e) {
+                if (touchmoved != true) {
+                    console.log('redirect');
+                    window.location.href = document.getElementById("previous-page-link").href;
+                }
+            }).on('touchmove', function(e) {
+                touchmoved = true;
+            }).on('touchstart', function() {
+                touchmoved = false;
+            });
+            var touchmoved2;
+            $('.next-page-link').on('touchend', function(e) {
+                if (touchmoved2 != true) {
+                    console.log('redirect');
+                    window.location.href = document.getElementById("next-page-link").href;
+                }
+            }).on('touchmove', function(e) {
+                touchmoved2 = true;
+            }).on('touchstart', function() {
+                touchmoved2 = false;
+            });
+        </script>
+        <script async src="assets/js/gtag.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-GY3DPLMNQF');
+        </script>
+    </head>
+    <body class="home blog ruby-body is-full-width is-social-tooltip">
+        <div class="main-site-outer">
+            <div class="header-outer header-style-1">
+                <div class="top-bar-wrap clearfix">
+                    <div class="ruby-container">
+                        <div class="top-bar-inner clearfix">
+                            <div class="top-bar-menu">
+                                <ul id="menu-top-1" class="top-bar-menu-inner">
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9933 is-category-10">
+                                        <a href="./category/%e6%9a%ae%e3%82%89%e3%81%97.html">暮らし</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11286 is-category-52">
+                                        <a href="./category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html">奇聞逸話</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11287 is-category-55">
+                                        <a href="./category/%e5%ae%87%e5%ae%99.html">宇宙</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11288 is-category-54">
+                                        <a href="./category/%e6%ad%b4%e5%8f%b2.html">歴史</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11289 is-category-56">
+                                        <a href="./category/%e8%87%aa%e7%84%b6.html">自然</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11290 is-category-53">
+                                        <a href="./category/%e9%a3%b2%e9%a3%9f.html">飲食</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="top-bar-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-wrap">
+                    <div class="header-banner-wrap clearfix">
+                        <div class="header-logo-wrap">
+                            <a class="logo-image" href="">
+                                <img class="logo-img-data" data-no-retina srcset="assets/img/DAZZLLIN.jpg 1x, assets/img/DAZZLLIN.jpg 2x" src="assets/img/DAZZLLIN.jpg" alt="Dazzllin" style="max-height: 150px" height="150" width="1005"/>
+                            </a>
+                            <h1 class="logo-title" style="display:none">Dazzllin</h1>
+                            <meta itemprop="name" content="Dazzllin">
+                        </div>
+                    </div>
+                </div>
+                <div id="ruby-banner-search-form" class="banner-search-form-wrap mfp-hide mfp-animation">
+                    <div class="banner-search-form-inner">
+                        <form method="get" action=".html">
+                            <div class="ruby-search">
+                                <span class="ruby-search-input">
+                                    <input type="text" class="field" placeholder="Search and hit enter&hellip;" value name="s" title="Search for:"/>
+                                </span>
+                                <span class="ruby-search-submit">
+                                    <input type="submit" value/>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="main-site-wrap">
+                <div class="main-site-mask"></div>
+                <div id="ruby-site-content" class="main-site-content-wrap clearfix">
+                    <div class="feat-wrap feat-slider-hw">
+                        <div class="ruby-container">
+                            <div class="feat-inner">
+                                <div class="slider-wrap is-hw-slider">
+                                    <div class="slider-loading"></div>
+                                    <div class="ruby-slider-hw slider-init">
+                                        <article class="post-wrap post-slider is-light-text post-slider-hw is-background-post" style="background-image: url(assets/img/COVER-PHOTO.jpg)">
+                                            <a class="post-slider-link" href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" rel="bookmark"></a>
+                                            <div class="is-table">
+                                                <div class="is-cell is-bottom is-center">
+                                                    <div class="post-header">
+                                                        <div class="post-cat-info is-relative">
+                                                            <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                        </div>
+                                                        <h3 class="post-title is-big-title">
+                                                            <a href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" rel="bookmark" title="一見の価値あり！ ちょっと変わったミュージアム５選">一見の価値あり！ ちょっと変わったミュージアム５選</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-slider is-light-text post-slider-hw is-background-post" style="background-image: url(assets/img/Cover-Photo-12.jpg)">
+                                            <a class="post-slider-link" href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" rel="bookmark"></a>
+                                            <div class="is-table">
+                                                <div class="is-cell is-bottom is-center">
+                                                    <div class="post-header">
+                                                        <div class="post-cat-info is-relative">
+                                                            <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                        </div>
+                                                        <h3 class="post-title is-big-title">
+                                                            <a href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" rel="bookmark" title="3つの有名なギリシャ神話から世の理を学びましょう">3つの有名なギリシャ神話から世の理を学びましょう</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-slider is-light-text post-slider-hw is-background-post" style="background-image: url(assets/img/Cover-Photo-2.jpg)">
+                                            <a class="post-slider-link" href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" rel="bookmark"></a>
+                                            <div class="is-table">
+                                                <div class="is-cell is-bottom is-center">
+                                                    <div class="post-header">
+                                                        <div class="post-cat-info is-relative">
+                                                            <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                        </div>
+                                                        <h3 class="post-title is-big-title">
+                                                            <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" rel="bookmark" title="宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは">宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-slider is-light-text post-slider-hw is-background-post" style="background-image: url(assets/img/Cover-Photo-3.jpg)">
+                                            <a class="post-slider-link" href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" rel="bookmark"></a>
+                                            <div class="is-table">
+                                                <div class="is-cell is-bottom is-center">
+                                                    <div class="post-header">
+                                                        <div class="post-cat-info is-relative">
+                                                            <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                        </div>
+                                                        <h3 class="post-title is-big-title">
+                                                            <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" rel="bookmark" title="宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1">宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-slider is-light-text post-slider-hw is-background-post" style="background-image: url(assets/img/Cover-photo-300x270-2.jpg)">
+                                            <a class="post-slider-link" href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" rel="bookmark"></a>
+                                            <div class="is-table">
+                                                <div class="is-cell is-bottom is-center">
+                                                    <div class="post-header">
+                                                        <div class="post-cat-info is-relative">
+                                                            <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                        </div>
+                                                        <h3 class="post-title is-big-title">
+                                                            <a href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" rel="bookmark" title="宇宙論を飛躍的に前進させた天文学者4名">宇宙論を飛躍的に前進させた天文学者4名</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="ruby-slider-hw-nav slider-init">
+                                        <article class="post-wrap post-grid-small-s">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" title="一見の価値あり！ ちょっと変わったミュージアム５選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="300" height="270" src="assets/img/COVER-PHOTO-300x270.jpg" class="attachment-look_ruby_300_270 size-look_ruby_300_270 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <h3 class="post-title is-small-title">
+                                                    <a href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" rel="bookmark" title="一見の価値あり！ ちょっと変わったミュージアム５選">一見の価値あり！ ちょっと変わったミュージアム５選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-date">
+                                                        <time class="date published" datetime="2021-08-20T02:05:40+00:00">3 years ago</time>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-grid-small-s">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" title="3つの有名なギリシャ神話から世の理を学びましょう" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="300" height="270" src="assets/img/Cover-Photo-12-300x270.jpg" class="attachment-look_ruby_300_270 size-look_ruby_300_270 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <h3 class="post-title is-small-title">
+                                                    <a href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" rel="bookmark" title="3つの有名なギリシャ神話から世の理を学びましょう">3つの有名なギリシャ神話から世の理を学びましょう</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-date">
+                                                        <time class="date published" datetime="2021-08-20T01:49:29+00:00">3 years ago</time>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-grid-small-s">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" title="宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="300" height="270" src="assets/img/Cover-Photo-2-300x270.jpg" class="attachment-look_ruby_300_270 size-look_ruby_300_270 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <h3 class="post-title is-small-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" rel="bookmark" title="宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは">宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-date">
+                                                        <time class="date published" datetime="2021-08-20T01:48:22+00:00">3 years ago</time>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-grid-small-s">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" title="宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="300" height="270" src="assets/img/Cover-Photo-3-300x270.jpg" class="attachment-look_ruby_300_270 size-look_ruby_300_270 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <h3 class="post-title is-small-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" rel="bookmark" title="宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1">宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-date">
+                                                        <time class="date published" datetime="2021-08-20T01:48:18+00:00">3 years ago</time>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post-wrap post-grid-small-s">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" title="宇宙論を飛躍的に前進させた天文学者4名" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="300" height="270" src="assets/img/Cover-photo-300x270-2.jpg" class="attachment-look_ruby_300_270 size-look_ruby_300_270 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <h3 class="post-title is-small-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" rel="bookmark" title="宇宙論を飛躍的に前進させた天文学者4名">宇宙論を飛躍的に前進させた天文学者4名</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-date">
+                                                        <time class="date published" datetime="2021-08-20T01:48:13+00:00">3 years ago</time>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ruby-page-wrap ruby-section row blog-wrap is-layout_grid no-big-first is-sidebar-right ruby-container">
+                        <div class="ruby-content-wrap blog-inner col-sm-8 col-xs-12 content-with-sidebar clearfix">
+                            <div class="blog-listing-wrap">
+                                <div class="blog-content-wrap row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" title="一見の価値あり！ ちょっと変わったミュージアム５選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/COVER-PHOTO-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e4%b8%80%e8%a6%8b%e3%81%ae%e4%be%a1%e5%80%a4%e3%81%82%e3%82%8a%ef%bc%81-%e3%81%a1%e3%82%87%e3%81%a3%e3%81%a8%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e3%83%9f%e3%83%a5%e3%83%bc%e3%82%b8%e3%82%a2%e3%83%a0.html" rel="bookmark" title="一見の価値あり！ ちょっと変わったミュージアム５選">一見の価値あり！ ちょっと変わったミュージアム５選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" title="3つの有名なギリシャ神話から世の理を学びましょう" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-12-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/3%e3%81%a4%e3%81%ae%e6%9c%89%e5%90%8d%e3%81%aa%e3%82%ae%e3%83%aa%e3%82%b7%e3%83%a3%e7%a5%9e%e8%a9%b1%e3%81%8b%e3%82%89%e4%b8%96%e3%81%ae%e7%90%86%e3%82%92%e5%ad%a6%e3%81%b3%e3%81%be%e3%81%97%e3%82%87.html" rel="bookmark" title="3つの有名なギリシャ神話から世の理を学びましょう">3つの有名なギリシャ神話から世の理を学びましょう</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" title="宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-2-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95%e3%81%af%e3%81%a9%e3%82%8c%e3%81%8f%e3%82%89%e3%81%84%ef%bc%9f%e3%83%8f%e3%83%83%e3%83%96%e3%83%ab%e5%ae%9a%e6%95%b0%e3%81%8c%e7%b7%a8%e3%81%bf.html" rel="bookmark" title="宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは">宇宙の大きさはどれくらい？ハッブル定数が編み出した結果とは</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" title="宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-3-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e3%81%ae%e4%b8%8d%e6%80%9d%e8%ad%b0%ef%bc%812600%e4%bb%a5%e4%b8%8a%e3%81%ae%e6%83%91%e6%98%9f%e3%81%ab%e3%81%be%e3%82%8b%e3%81%a7%e4%b8%83%e3%81%a4%e5%ad%90%e3%81%ae%e3%82%88.html" rel="bookmark" title="宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1">宇宙の不思議！2,600以上の惑星にまるで七つ子のようなTRAPPIST-1</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" title="宇宙論を飛躍的に前進させた天文学者4名" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-photo-360x250-2.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e8%ab%96%e3%82%92%e9%a3%9b%e8%ba%8d%e7%9a%84%e3%81%ab%e5%89%8d%e9%80%b2%e3%81%95%e3%81%9b%e3%81%9f%e5%a4%a9%e6%96%87%e5%ad%a6%e8%80%854%e5%90%8d.html" rel="bookmark" title="宇宙論を飛躍的に前進させた天文学者4名">宇宙論を飛躍的に前進させた天文学者4名</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e6%99%82%e4%bb%a3%e3%82%92%e8%b6%85%e3%81%88%e3%81%9f%e6%ad%b4%e5%8f%b2%e7%9a%84%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%83%88%ef%bc%96.html" title="時代を超えた歴史的インスタレーションアート６選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-54" href="/category/%e6%ad%b4%e5%8f%b2.html" title="歴史">歴史</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e6%99%82%e4%bb%a3%e3%82%92%e8%b6%85%e3%81%88%e3%81%9f%e6%ad%b4%e5%8f%b2%e7%9a%84%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3%e3%82%a2%e3%83%bc%e3%83%88%ef%bc%96.html" rel="bookmark" title="時代を超えた歴史的インスタレーションアート６選">時代を超えた歴史的インスタレーションアート６選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e6%ad%b4%e5%8f%b2.html" title="歴史">歴史</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e6%ac%a1%e3%81%ae%e3%83%a8%e3%83%bc%e3%83%ad%e3%83%83%e3%83%91%e6%97%85%e8%a1%8c%e3%81%a7%e8%a8%aa%e3%82%8c%e3%82%8b%e3%81%b9%e3%81%8d%e7%be%8e%e8%a1%93%e9%a4%a8%ef%bc%96%e9%81%b8.html" title="次のヨーロッパ旅行で訪れるべき美術館６選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-1-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-10" href="/category/%e6%9a%ae%e3%82%89%e3%81%97.html" title="暮らし">暮らし</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e6%ac%a1%e3%81%ae%e3%83%a8%e3%83%bc%e3%83%ad%e3%83%83%e3%83%91%e6%97%85%e8%a1%8c%e3%81%a7%e8%a8%aa%e3%82%8c%e3%82%8b%e3%81%b9%e3%81%8d%e7%be%8e%e8%a1%93%e9%a4%a8%ef%bc%96%e9%81%b8.html" rel="bookmark" title="次のヨーロッパ旅行で訪れるべき美術館６選">次のヨーロッパ旅行で訪れるべき美術館６選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e6%9a%ae%e3%82%89%e3%81%97.html" title="暮らし">暮らし</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e6%ad%bb%e3%81%ac%e3%81%be%e3%81%a7%e3%81%ab%e8%a8%aa%e3%82%8c%e3%81%9f%e3%81%84%e5%90%8d%e6%89%8010%e9%81%b8.html" title="死ぬまでに訪れたい名所10選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/COVER-PHOTO-1-360x250-2.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-56" href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e6%ad%bb%e3%81%ac%e3%81%be%e3%81%a7%e3%81%ab%e8%a8%aa%e3%82%8c%e3%81%9f%e3%81%84%e5%90%8d%e6%89%8010%e9%81%b8.html" rel="bookmark" title="死ぬまでに訪れたい名所10選">死ぬまでに訪れたい名所10選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e9%a3%9b%e8%a1%8c%e5%a3%ab%e3%81%ae%e7%94%9f%e6%b4%bb%e3%81%a8%e3%81%af%ef%bc%9f%e5%81%a5%e5%ba%b7%e3%82%92%e4%bf%9d%e3%81%a4%e7%a7%98%e8%a8%a3%e3%83%bb%e9%a3%9f%e4%ba%8b%e3%83%bb.html" title="宇宙飛行士の生活とは？健康を保つ秘訣・食事・睡眠方法" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-4-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-55" href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%ae%87%e5%ae%99%e9%a3%9b%e8%a1%8c%e5%a3%ab%e3%81%ae%e7%94%9f%e6%b4%bb%e3%81%a8%e3%81%af%ef%bc%9f%e5%81%a5%e5%ba%b7%e3%82%92%e4%bf%9d%e3%81%a4%e7%a7%98%e8%a8%a3%e3%83%bb%e9%a3%9f%e4%ba%8b%e3%83%bb.html" rel="bookmark" title="宇宙飛行士の生活とは？健康を保つ秘訣・食事・睡眠方法">宇宙飛行士の生活とは？健康を保つ秘訣・食事・睡眠方法</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%ae%87%e5%ae%99.html" title="宇宙">宇宙</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%82%b8%e3%83%a3%e3%83%b3%e3%82%af%e3%83%95%e3%83%bc%e3%83%89%e3%82%92%e4%b8%80%e6%89%8b%e9%96%93%e3%81%a7%e3%82%b0%e3%83%b3%e3%81%a8%e5%81%a5%e5%ba%b7%e7%9a%84%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9.html" title="ジャンクフードを一手間でグンと健康的にする方法14選" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/COVER-Photo-Chili-Cheese-Nachos-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-53" href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%82%b8%e3%83%a3%e3%83%b3%e3%82%af%e3%83%95%e3%83%bc%e3%83%89%e3%82%92%e4%b8%80%e6%89%8b%e9%96%93%e3%81%a7%e3%82%b0%e3%83%b3%e3%81%a8%e5%81%a5%e5%ba%b7%e7%9a%84%e3%81%ab%e3%81%99%e3%82%8b%e6%96%b9.html" rel="bookmark" title="ジャンクフードを一手間でグンと健康的にする方法14選">ジャンクフードを一手間でグンと健康的にする方法14選</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%81%be%e3%81%a0%e7%9f%a5%e3%82%89%e3%82%8c%e3%81%a6%e3%81%84%e3%81%aa%e3%81%84%e9%a9%9a%e3%81%8d%e3%81%ae%e5%90%8d%e6%89%80.html" title="まだ知られていない驚きの名所" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-56" href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%81%be%e3%81%a0%e7%9f%a5%e3%82%89%e3%82%8c%e3%81%a6%e3%81%84%e3%81%aa%e3%81%84%e9%a9%9a%e3%81%8d%e3%81%ae%e5%90%8d%e6%89%80.html" rel="bookmark" title="まだ知られていない驚きの名所">まだ知られていない驚きの名所</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%81%be%e3%82%8b%e3%81%a7%e7%95%b0%e4%b8%96%e7%95%8c%e3%81%ab%e6%9d%a5%e3%81%9f%e3%81%8b%e3%81%ae%e3%82%88%e3%81%86%e3%81%aa-%e4%b8%8d%e6%80%9d%e8%ad%b0%e3%81%aa%e7%a0%82%e6%bc%a0%e3%81%ae%e5%9c%b0.html" title="まるで異世界に来たかのような 不思議な砂漠の地" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-5-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-56" href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%81%be%e3%82%8b%e3%81%a7%e7%95%b0%e4%b8%96%e7%95%8c%e3%81%ab%e6%9d%a5%e3%81%9f%e3%81%8b%e3%81%ae%e3%82%88%e3%81%86%e3%81%aa-%e4%b8%8d%e6%80%9d%e8%ad%b0%e3%81%aa%e7%a0%82%e6%bc%a0%e3%81%ae%e5%9c%b0.html" rel="bookmark" title="まるで異世界に来たかのような 不思議な砂漠の地">まるで異世界に来たかのような 不思議な砂漠の地</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%8c%97%e6%ac%a7%e3%81%ae%e5%86%a5%e5%ba%9c%e3%81%ae%e5%a5%b3%e7%a5%9e%e3%83%98%e3%83%ab%e3%81%ae%e4%b8%96%e7%95%8c%e3%82%92%e8%a8%aa%e3%82%8c%e3%82%8b.html" title="北欧の冥府の女神ヘルの世界を訪れる" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-6-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%8c%97%e6%ac%a7%e3%81%ae%e5%86%a5%e5%ba%9c%e3%81%ae%e5%a5%b3%e7%a5%9e%e3%83%98%e3%83%ab%e3%81%ae%e4%b8%96%e7%95%8c%e3%82%92%e8%a8%aa%e3%82%8c%e3%82%8b.html" rel="bookmark" title="北欧の冥府の女神ヘルの世界を訪れる">北欧の冥府の女神ヘルの世界を訪れる</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%9c%b0%e7%90%83%e4%b8%8a%e3%81%ae%e8%a1%8c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%81%8f%e3%81%aa%e3%82%8b%e4%b8%8d%e6%80%9d%e8%ad%b0%e3%81%aa%e5%a0%b4%e6%89%80.html" title="地球上の行ってみたくなる不思議な場所" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-7-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-56" href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%9c%b0%e7%90%83%e4%b8%8a%e3%81%ae%e8%a1%8c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f%e3%81%8f%e3%81%aa%e3%82%8b%e4%b8%8d%e6%80%9d%e8%ad%b0%e3%81%aa%e5%a0%b4%e6%89%80.html" rel="bookmark" title="地球上の行ってみたくなる不思議な場所">地球上の行ってみたくなる不思議な場所</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e7%b0%a1%e5%8d%98%e3%81%ab%e4%bd%9c%e3%82%8c%e3%82%8b%e3%82%a2%e3%82%b8%e3%82%a2%e6%96%99%e7%90%8611%e9%81%b8%ef%bc%81%e7%be%8e%e5%91%b3%e3%81%97%e3%81%8f%e3%83%98%e3%83%ab%e3%82%b7%e3%83%bc%e3%81%a7.html" title="簡単に作れるアジア料理11選！美味しくヘルシーで満腹感あり" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/COVER-Photo-Chili-Cheese-Nachos-1-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-53" href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e7%b0%a1%e5%8d%98%e3%81%ab%e4%bd%9c%e3%82%8c%e3%82%8b%e3%82%a2%e3%82%b8%e3%82%a2%e6%96%99%e7%90%8611%e9%81%b8%ef%bc%81%e7%be%8e%e5%91%b3%e3%81%97%e3%81%8f%e3%83%98%e3%83%ab%e3%82%b7%e3%83%bc%e3%81%a7.html" rel="bookmark" title="簡単に作れるアジア料理11選！美味しくヘルシーで満腹感あり">簡単に作れるアジア料理11選！美味しくヘルシーで満腹感あり</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%82%b9%e3%82%bf%e3%83%90%e3%81%ae%e3%83%91%e3%83%b3%e3%83%97%e3%82%ad%e3%83%b3%e3%82%b9%e3%83%91%e3%82%a4%e3%82%b9%e3%83%a9%e3%83%86%e3%82%92%e8%87%aa%e5%ae%85%e3%81%a7%e4%bd%9c%e3%82%8d%e3%81%86.html" title="スタバのパンプキンスパイスラテを自宅で作ろう！隠し味はシナモンとジンジャー" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-8-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-53" href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%82%b9%e3%82%bf%e3%83%90%e3%81%ae%e3%83%91%e3%83%b3%e3%83%97%e3%82%ad%e3%83%b3%e3%82%b9%e3%83%91%e3%82%a4%e3%82%b9%e3%83%a9%e3%83%86%e3%82%92%e8%87%aa%e5%ae%85%e3%81%a7%e4%bd%9c%e3%82%8d%e3%81%86.html" rel="bookmark" title="スタバのパンプキンスパイスラテを自宅で作ろう！隠し味はシナモンとジンジャー">スタバのパンプキンスパイスラテを自宅で作ろう！隠し味はシナモンとジンジャー</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%83%95%e3%83%ab%e3%83%bc%e3%83%84%e3%83%87%e3%82%b6%e3%83%bc%e3%83%88%e3%83%ac%e3%82%b7%e3%83%94%e3%83%99%e3%82%b9%e3%83%8810%ef%bc%81%e5%ad%90%e3%81%a9%e3%82%82%e3%81%a7%e3%82%82%e6%a5%bd%e3%81%97.html" title="フルーツデザートレシピベスト10！子どもでも楽しく作れて簡単" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-9-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-53" href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%83%95%e3%83%ab%e3%83%bc%e3%83%84%e3%83%87%e3%82%b6%e3%83%bc%e3%83%88%e3%83%ac%e3%82%b7%e3%83%94%e3%83%99%e3%82%b9%e3%83%8810%ef%bc%81%e5%ad%90%e3%81%a9%e3%82%82%e3%81%a7%e3%82%82%e6%a5%bd%e3%81%97.html" rel="bookmark" title="フルーツデザートレシピベスト10！子どもでも楽しく作れて簡単">フルーツデザートレシピベスト10！子どもでも楽しく作れて簡単</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e9%a3%b2%e9%a3%9f.html" title="飲食">飲食</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e5%9c%b0%e7%90%83%e4%b8%8a%e3%81%ae%e9%a9%9a%e3%81%8f%e3%81%bb%e3%81%a9%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e5%b2%a9.html" title="地球上の驚くほど変わった岩" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/COVER-PHOTO-2-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-56" href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e5%9c%b0%e7%90%83%e4%b8%8a%e3%81%ae%e9%a9%9a%e3%81%8f%e3%81%bb%e3%81%a9%e5%a4%89%e3%82%8f%e3%81%a3%e3%81%9f%e5%b2%a9.html" rel="bookmark" title="地球上の驚くほど変わった岩">地球上の驚くほど変わった岩</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e8%87%aa%e7%84%b6.html" title="自然">自然</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e7%9b%ae%e6%92%83%e8%a8%bc%e8%a8%80%e3%81%82%e3%82%8a%ef%bc%9f%e3%82%b9%e3%82%b3%e3%83%83%e3%83%88%e3%83%a9%e3%83%b3%e3%83%89%e3%80%8c%e3%83%8d%e3%82%b9%e6%b9%96%e3%80%8d%e3%81%ae%e6%80%aa%e7%89%a9.html" title="目撃証言あり？スコットランド「ネス湖」の怪物にまつわるお話" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-11-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e7%9b%ae%e6%92%83%e8%a8%bc%e8%a8%80%e3%81%82%e3%82%8a%ef%bc%9f%e3%82%b9%e3%82%b3%e3%83%83%e3%83%88%e3%83%a9%e3%83%b3%e3%83%89%e3%80%8c%e3%83%8d%e3%82%b9%e6%b9%96%e3%80%8d%e3%81%ae%e6%80%aa%e7%89%a9.html" rel="bookmark" title="目撃証言あり？スコットランド「ネス湖」の怪物にまつわるお話">目撃証言あり？スコットランド「ネス湖」の怪物にまつわるお話</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <article class="post-wrap post-grid is-center">
+                                            <div class="post-thumb-outer">
+                                                <div class=" post-thumb is-image ruby-holder">
+                                                    <a href="article/%e3%82%be%e3%83%83%e3%81%a8%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%aa%e4%b8%96%e7%95%8c%e3%81%ae%e9%83%bd%e5%b8%82%e4%bc%9d%e8%aa%ac.html" title="ゾッとするような世界の都市伝説" rel="bookmark">
+                                                        <span class="thumbnail-resize">
+                                                            <img width="360" height="250" src="assets/img/Cover-Photo-10-360x250.jpg" class="attachment-look_ruby_360_250 size-look_ruby_360_250 wp-post-image" alt/>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="post-header">
+                                                <div class="post-cat-info is-relative">
+                                                    <a class="cat-info-el is-cat-52" href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                </div>
+                                                <h3 class="post-title is-medium-title">
+                                                    <a href="article/%e3%82%be%e3%83%83%e3%81%a8%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%aa%e4%b8%96%e7%95%8c%e3%81%ae%e9%83%bd%e5%b8%82%e4%bc%9d%e8%aa%ac.html" rel="bookmark" title="ゾッとするような世界の都市伝説">ゾッとするような世界の都市伝説</a>
+                                                </h3>
+                                                <div class="post-meta-info">
+                                                    <span class="meta-info-el meta-info-cat">
+                                                        <a href="/category/%e5%a5%87%e8%81%9e%e9%80%b8%e8%a9%b1.html" title="奇聞逸話">奇聞逸話</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class=" is-divider clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <aside id="sidebar" class="sidebar-wrap col-sm-4 col-xs-12 clearfix" role="complementary">
+                            <div class="sidebar-inner">
+                                <section id="ai_widget-3" class="widget ai_widget">
+                                    <div class="ai-viewports ai-viewport-1 ai-viewport-2" data-code="PGRpdiBjbGFzcz0nY29kZS1ibG9jayBjb2RlLWJsb2NrLTEnIHN0eWxlPSdtYXJnaW46IDhweCBhdXRvOyB0ZXh0LWFsaWduOiBjZW50ZXI7IGRpc3BsYXk6IGJsb2NrOyBjbGVhcjogYm90aDsnPgo8ZGl2IGNsYXNzPSJhaS1hdHRyaWJ1dGVzIj4KPGRpdiBjbGFzcz0iY29kZS1ibG9jay1sYWJlbCI+QWR2ZXJ0aXNlbWVudDwvZGl2Pgo8L2Rpdj4KPHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzP2NsaWVudD1jYS1wdWItMzU1NzU0MzM5NjI3OTI4MCIKICAgICBjcm9zc29yaWdpbj0iYW5vbnltb3VzIj48L3NjcmlwdD4KPCEtLSBhdHRvcm5leXNub3RlIC0gYWkgMSAtLT4KPGlucyBjbGFzcz0iYWRzYnlnb29nbGUiCiAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lLWJsb2NrO3dpZHRoOjMwMHB4O2hlaWdodDoyNTBweCIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTM1NTc1NDMzOTYyNzkyODAiCiAgICAgZGF0YS1hZC1zbG90PSI2NzM0MjQwMTMxIj48L2lucz4KPHNjcmlwdD4KICAgICAoYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD48L2Rpdj4K" data-block="1"></div>
+                                    <script>
+                                        var ai_script = document.getElementsByClassName('ai-viewports');
+                                        ai_insert_viewport(ai_script[ai_script.length - 1]);
+                                    </script>
+                                </section>
+                                <section id="ai_widget-5" class="widget ai_widget">
+                                    <div class="ai-viewports ai-viewport-1 ai-viewport-2" data-code="PGRpdiBjbGFzcz0nY29kZS1ibG9jayBjb2RlLWJsb2NrLTMnIHN0eWxlPSdtYXJnaW46IDhweCBhdXRvOyB0ZXh0LWFsaWduOiBjZW50ZXI7IGRpc3BsYXk6IGJsb2NrOyBjbGVhcjogYm90aDsnPgo8ZGl2IGNsYXNzPSJhaS1hdHRyaWJ1dGVzIj4KPGRpdiBjbGFzcz0iY29kZS1ibG9jay1sYWJlbCI+QWR2ZXJ0aXNlbWVudDwvZGl2Pgo8L2Rpdj4KPHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzP2NsaWVudD1jYS1wdWItMzU1NzU0MzM5NjI3OTI4MCIKICAgICBjcm9zc29yaWdpbj0iYW5vbnltb3VzIj48L3NjcmlwdD4KPCEtLSBhdHRvcm5leXNub3RlIC0gYWkgMyAtLT4KPGlucyBjbGFzcz0iYWRzYnlnb29nbGUiCiAgICAgc3R5bGU9ImRpc3BsYXk6aW5saW5lLWJsb2NrO3dpZHRoOjMwMHB4O2hlaWdodDoyNTBweCIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTM1NTc1NDMzOTYyNzkyODAiCiAgICAgZGF0YS1hZC1zbG90PSIxNDgxOTEzNDUwIj48L2lucz4KPHNjcmlwdD4KICAgICAoYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD48L2Rpdj4K" data-block="3"></div>
+                                    <script>
+                                        var ai_script = document.getElementsByClassName('ai-viewports');
+                                        ai_insert_viewport(ai_script[ai_script.length - 1]);
+                                    </script>
+                                </section>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <footer id="footer" class="footer-wrap is-light-text">
+                    <div class="top-footer-wrap">
+                        <div class="top-footer-inner"></div>
+                    </div>
+                    <div class="footer-inner">
+                        <div class="footer-social-bar-wrap">
+                            <div class="ruby-container">
+                                <div id="footer-copyright" class="footer-copyright-wrap">
+                                    <p>
+                                    <div>
+                                        <p>著作権 © 2020 </p>
+                                        <p>
+                                            <a href="./imprint-jp.html">impressum</a>
+                                            | <a href="./privacy-policy-jp.html">プライバシーポリシー</a>
+                                            | <a href="./contact-us-jp.html">お問い合わせ</a>
+                                            | <a href="./terms-of-service-jp.html">利用規約</a>
+                                        </p>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            setTimeout(function() {
+                Array.prototype.forEach.call(document.querySelectorAll(".ai-viewports"), function(element, index) {
+                    ai_insert_viewport(element);
+                });
+            }, 10);
+        </script>
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var look_ruby_to_top = "1";
+            /* ]]> */
+        </script>
+        <script defer src="assets/js/main.js"></script>
+    </body>
+</html>
