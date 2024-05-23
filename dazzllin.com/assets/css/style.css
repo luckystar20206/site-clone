@@ -14142,6 +14142,30 @@ h3:first-letter {
     z-index: 10
 }
 
+@media only screen and (min-width: 992px) {
+    .entry-header {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .entry-title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .entry-content {
+        word-wrap: break-word;
+        word-break: break-word;
+        letter-spacing: .025em;
+    }
+}
+
 /*
 Theme Name:     look
 Theme URI:      http://demo.themeruby.com/look
