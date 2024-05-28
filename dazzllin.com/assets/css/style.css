@@ -14302,3 +14302,48 @@ body {
         display: inherit !important
     }
 }
+
+.cookie-container{
+    background: linear-gradient(260deg, #9b6c50 0%, #4f2626 100%);
+    position: fixed;
+    bottom: 40px;
+    right: 70px;
+    color: white;
+    display: flex;
+    width: 500px;
+    height: 250px;
+    border-radius: 1.2rem;
+    padding: 1rem;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.text{
+    width: 80%;
+}
+
+.cookie{
+    transform: scale(0.6);
+    overflow: visible;
+}
+
+.cookie-title{
+    font-weight: lighter;
+}
+
+.cookie-subtitle{
+    font-weight: bold;
+    padding: 0.7rem 0rem;
+}
+
+.cookei-button{
+    cursor: pointer;
+    border-style: none;
+    padding: 0.5rem 1rem;
+    color: #4f2626;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    border-radius: 0.3rem;
+}
