@@ -79,8 +79,11 @@ const tl = gsap.timeline({
   );
   
   // FADING THE COOKIE OUT
-  const button = document.querySelector("button");
+  const button = document.querySelector(".cookie-button");
   button.addEventListener("click", () => {
+    const expires = new Date();
+    localStorage.setItem("cookieConsent", "accepted");
+    localStorage.setItem("expires", expires.getTime() + (30 * 24 * 60 * 60 * 1000));
     gsap.to(".cookie-container", {
       opacity: 0,
       y: 100,
