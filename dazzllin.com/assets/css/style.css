@@ -11362,7 +11362,8 @@ input#comment-submit:hover,input#comment-submit:focus {
 
 .footer-wrap {
     position: relative;
-    display: block
+    display: block;
+    margin-bottom: 100px;
 }
 
 .footer-inner {
