@@ -9289,7 +9289,7 @@ body:not(.is-boxed) .fw-block-slider-fw {
 }
 
 .single .post-title.single-title h1 {
-    font-size: inherit
+    font-size: 48px;
 }
 
 .single-meta-info-bar {
