@@ -544,19 +544,10 @@
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Get the language attribute of the HTML tag
-                const language = document.documentElement.lang || document.documentElement.getAttribute('lang');
-                // Check if the language is set to Japanese or English
-                if (language.startsWith('ja')) {
-                    if (localStorage.getItem("cookieConsent") == "accepted" && localStorage.getItem("expires") > Date.now()) {
-                        $('.cookie-container').hide();
-                    } else {
-                        $('.cookie-container').css("display", "flex");
-                    }
-                } else if (language.startsWith('en')) {
+                if (localStorage.getItem("cookieConsent") == "accepted" && localStorage.getItem("expires") > Date.now()) {
                     $('.cookie-container').hide();
                 } else {
-                    $('.cookie-container').hide();
+                    $('.cookie-container').css("display", "flex");
                 }
             });
         </script>
