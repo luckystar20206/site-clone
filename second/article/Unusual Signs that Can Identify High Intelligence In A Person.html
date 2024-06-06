@@ -100,8 +100,8 @@
             <div class="header-wrap">
                 <div class="header-banner-wrap clearfix">
                     <div class="header-logo-wrap"><a class="logo-image" href="../index.html"><img class="logo-img-data"
-                                data-no-retina srcset="../assets/img/DAZZLLIN.jpg 1x, ../assets/img/DAZZLLIN.jpg 2x"
-                                src="../assets/img/DAZZLLIN.jpg" alt="Dazzllin" style="max-height: 150px" height="150"
+                                data-no-retina srcset="../assets/img/photo_6273521007302130968_y.jpg 1x, ../assets/img/photo_6273521007302130968_y.jpg 2x"
+                                src="../assets/img/photo_6273521007302130968_y.jpg" alt="Fundelica" style="max-height: 150px" height="150"
                                 width="1005" /></a></div>
                 </div>
             </div>
@@ -497,6 +497,24 @@
     </script>
     <script defer
         src="https://www.dazzllin.com/wp-content/cache/autoptimize/js/autoptimize_94a9f38c9fa9868d8dd0f81b68ab0a7e.js"></script>
+<div class="cookie-container">
+            <!-- THIS IS OUR COOKIE-->
+            <div class="text">
+                <p class="cookie-subtitle">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</p>
+                <button class="cookie-button">Okay, got it</button>
+            </div>  
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (localStorage.getItem("cookieConsent") == "accepted" && localStorage.getItem("expires") > Date.now()) {
+                    $('.cookie-container').hide();
+                } else {
+                    $('.cookie-container').css("display", "flex");
+                }
+            });
+        </script>
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/cookie.js"></script>
 </body>
 
 </html>

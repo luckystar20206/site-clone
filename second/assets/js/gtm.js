@@ -644,7 +644,7 @@
                 "function": "__html",
                 "metadata": ["map"],
                 "once_per_event": true,
-                "vtp_html": "\u003Cstyle\u003E\n  .entry p{font-size: 18px !important;\n   line-height:28px !important;\n  }\n  @media only screen and (max-width: 767px){\n    .post-title\u003E*, .single .post-title.single-title h1{\n    font-size: .62em !important;\n    }\n  }\n  \u003C\/style\u003E\n\n\u003Cscript type=\"text\/gtmscript\"\u003E$(document).ready(function(){$(\".my-heading\").css(\"font-size\",\"20px\")});\u003C\/script\u003E",
+                "vtp_html": "\u003Cstyle\u003E\n  .entry p{font-size: 21px !important;\n   line-height:28px !important;\n  }\n  @media only screen and (max-width: 767px){\n    .post-title\u003E*, .single .post-title.single-title h1{\n    font-size: .62em !important;\n    }\n  }\n  \u003C\/style\u003E\n\n\u003Cscript type=\"text\/gtmscript\"\u003E$(document).ready(function(){$(\".my-heading\").css(\"font-size\",\"20px\")});\u003C\/script\u003E",
                 "vtp_supportDocumentWrite": false,
                 "vtp_enableIframeMode": false,
                 "vtp_enableEditJsMacroBehavior": false,
