@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-Us">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./assets/css/font.css" rel="stylesheet">
+        <script src="./assets/plugins/jquery-3.3.1.min.js"></script>
+        <link media="all" href="./assets/css/style.css" rel="stylesheet" />
+        <title>imprint</title>
+        <meta name="robots" content="max-image-preview:large" />
+        <meta name="generator" content="All in One SEO (AIOSEO) 4.4.9.2" />
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var ai_front = { "insertion_before": "BEFORE", "insertion_after": "AFTER", "insertion_prepend": "PREPEND CONTENT", "insertion_append": "APPEND CONTENT", "insertion_replace_content": "REPLACE CONTENT", "insertion_replace_element": "REPLACE ELEMENT", "cancel": "Cancel", "use": "Use", "add": "Add", "parent": "Parent", "cancel_element_selection": "Cancel element selection", "select_parent_element": "Select parent element", "css_selector": "CSS selector", "use_current_selector": "Use current selector", "element": "ELEMENT", "path": "PATH", "selector": "SELECTOR", "visible": "VISIBLE", "hidden": "HIDDEN" };
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="./assets/js/config.js"></script>
+        <script type="text/javascript">
+            function ai_insert(insertion, selector, insertion_code) {
+                if (selector.indexOf(":eq") != -1) var elements = jQuery(selector); else var elements = document.querySelectorAll(selector); Array.prototype.forEach.call(elements, function (element, index) {
+                    var ai_debug = typeof ai_debugging !== "undefined"; if (element.hasAttribute("id")) selector_string = "#" + element.getAttribute("id"); else if (element.hasAttribute("class")) selector_string = "." + element.getAttribute("class").replace(new RegExp(" ", "g"), "."); else selector_string = ""; var template =
+                        document.createElement("div"); template.innerHTML = insertion_code; var ai_selector_counter = template.getElementsByClassName("ai-selector-counter")[0]; if (ai_selector_counter != null) ai_selector_counter.innerText = index + 1; var ai_debug_name_ai_main = template.getElementsByClassName("ai-debug-name ai-main")[0]; if (ai_debug_name_ai_main != null) {
+                            var insertion_name = ""; if (insertion == "before") insertion_name = ai_front.insertion_before; else if (insertion == "after") insertion_name = ai_front.insertion_after; else if (insertion ==
+                                "prepend") insertion_name = ai_front.insertion_prepend; else if (insertion == "append") insertion_name = ai_front.insertion_append; else if (insertion == "replace-content") insertion_name = ai_front.insertion_replace_content; else if (insertion == "replace-element") insertion_name = ai_front.insertion_replace_element; ai_debug_name_ai_main.innerText = insertion_name + " " + selector + " (" + element.tagName.toLowerCase() + selector_string + ")"
+                        } var range = document.createRange(); var fragment = range.createContextualFragment(template.innerHTML);
+                    if (insertion == "before") element.parentNode.insertBefore(fragment, element); else if (insertion == "after") element.parentNode.insertBefore(fragment, element.nextSibling); else if (insertion == "prepend") element.insertBefore(fragment, element.firstChild); else if (insertion == "append") element.insertBefore(fragment, null); else if (insertion == "replace-content") element.innerHTML = template.innerHTML; else if (insertion == "replace-element") { element.parentNode.insertBefore(fragment, element); element.parentNode.removeChild(element) } if (ai_debug) console.log("AI INSERT",
+                        insertion, selector, "(" + element.tagName.toLowerCase() + selector_string + ")")
+                })
+            }
+            function ai_insert_viewport(element) {
+                function hasClass(element, cls) { if (element == null) return false; if (element.classList) return element.classList.contains(cls); else return (" " + element.className + " ").indexOf(" " + cls + " ") > -1 } function addClass(element, cls) { if (element == null) return; if (element.classList) element.classList.add(cls); else element.className += " " + cls } function removeClass(element, cls) {
+                    if (element == null) return; if (element.classList) element.classList.remove(cls); else element.className = element.className.replace(new RegExp("(^|\\b)" +
+                        cls.split(" ").join("|") + "(\\b|$)", "gi"), " ")
+                } var ai_debug = typeof ai_debugging !== "undefined"; if (ai_debug) console.log("AI VIEWPORT INSERTION class:", element.getAttribute("class")); var visible = !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length); var block = element.getAttribute("data-block"); if (visible) {
+                    var insertion_code = element.getAttribute("data-code"); var insertion_type = element.getAttribute("data-insertion"); var selector = element.getAttribute("data-selector"); if (insertion_code !=
+                        null) if (insertion_type != null && selector != null) { var selector_exists = document.querySelectorAll(selector).length; if (ai_debug) console.log("AI VIEWPORT VISIBLE: block", block, insertion_type, selector, selector_exists ? "" : "NOT FOUND"); if (selector_exists) { ai_insert(insertion_type, selector, b64d(insertion_code)); removeClass(element, "ai-viewports") } } else {
+                            if (ai_debug) console.log("AI VIEWPORT VISIBLE: block", block); var range = document.createRange(); var fragment = range.createContextualFragment(b64d(insertion_code));
+                            element.parentNode.insertBefore(fragment, element.nextSibling); removeClass(element, "ai-viewports")
+                        }
+                } else { if (ai_debug) console.log("AI VIEWPORT NOT VISIBLE: block", block); var debug_bar = element.previousElementSibling; if (hasClass(debug_bar, "ai-debug-bar") && hasClass(debug_bar, "ai-debug-script")) { removeClass(debug_bar, "ai-debug-script"); addClass(debug_bar, "ai-debug-viewport-invisible") } removeClass(element, "ai-viewports") }
+            }
+            function b64e(str) { return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) { return String.fromCharCode("0x" + p1) })) } function b64d(str) { return decodeURIComponent(atob(str).split("").map(function (c) { return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2) }).join("")) };
+        </script>
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-MR5SQCC');
+        </script>
+
+        <script type="text/javascript">
+            window._tfa = window._tfa || [];
+            window._tfa.push({ notify: 'event', name: 'page_view', id: 1431958 });
+            !function (t, f, a, x) {
+                if (!document.getElementById(x)) {
+                    t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
+                }
+            }(document.createElement('script'),
+                document.getElementsByTagName('script')[0],
+                './assets/js/tfa.js',
+                'tb_tfa_script');
+        </script>
+
+        <script type="text/javascript">
+            var touchmoved;
+            $('.previous-page-link').on('touchend', function (e) {
+                if (touchmoved != true) {
+                    console.log('redirect');
+                    window.location.href = document.getElementById("previous-page-link").href;
+                }
+            }).on('touchmove', function (e) {
+                touchmoved = true;
+            }).on('touchstart', function () {
+                touchmoved = false;
+            });
+            var touchmoved2;
+            $('.next-page-link').on('touchend', function (e) {
+                if (touchmoved2 != true) {
+                    console.log('redirect');
+                    window.location.href = document.getElementById("next-page-link").href;
+                }
+            }).on('touchmove', function (e) {
+                touchmoved2 = true;
+            }).on('touchstart', function () {
+                touchmoved2 = false;
+            });
+        </script>
+
+        <script async src="assets/js/gtag.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-GY3DPLMNQF');
+        </script>
+
+        <style>
+            .entry p{
+                font-size: 21px !important;
+                line-height: 28px !important;
+            }
+        </style>
+    </head>
+
+    <body class="page-template-default page page-id-11776 ruby-body is-full-width is-social-tooltip">
+        <div class="main-site-outer">
+            <div class="header-outer header-style-1">
+                <div class="header-wrap">
+                    <div class="header-banner-wrap clearfix">
+                        <div class="header-logo-wrap">
+                            <a class="logo-image" href="./index.html">
+                                <img class="logo-img-data" data-no-retina srcset="assets/img/photo_6273521007302130968_y.jpg 1x, assets/img/photo_6273521007302130968_y.jpg 2x" src="assets/img/photo_6273521007302130968_y.jpg" alt="starentertainmenthub" style="max-height: 150px" height="150" width="1005"/>
+                            </a>
+                            <h1 class="logo-title" style="display:none">starentertainmenthub</h1>
+                            <meta itemprop="name" content="starentertainmenthub">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-site-wrap">
+                <div class="main-site-mask"></div>
+                <div id="ruby-site-content" class="main-site-content-wrap clearfix">
+                    <div class="ruby-page-wrap ruby-section row single-wrap is-sidebar-none ruby-container">
+                        <div class="ruby-content-wrap single-inner content-without-sidebar col-xs-12">
+                            <div class="post-wrap single-page-post">
+                                <div class="single-header" style="width: 100%;">
+                                    <div class="single-title post-title is-big-title">
+                                        <h1 class="entry-title">Contact Us</h1>
+                                    </div>
+                                </div>
+                                <div class="entry" style="font-family: inherit; font-size: 21px; flex-direction: column; width: 50%; float: left;">
+                                    <p>Contact：NAUTILUS MARKETING LTD</p>
+                                    <p>&nbsp;</p>
+                                    <p>Address: 85 First Floor, Great Portland Street, London, England, W1W 7LT</p>
+                                    <p>&nbsp;</p>
+                                    <p>Phone：020 4513 9344</p>
+                                    <p>&nbsp;</p>
+                                    <p>Email： info@nautilusmarketing.co.uk</p>
+                                    <p>&nbsp;</p>
+                                    <p>Company ID: 11824320</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                                <div style="width: 50%; float: left; padding: 20px; border: 1px thick black;">
+                                    <label for="">Name:</label>
+                                    <input type="text" style="margin-bottom: 20px;" placeholder="Name:"/>
+                                    <label for="">Email:</label>
+                                    <input type="email" style="margin-bottom: 20px;" placeholder="Email："/>
+                                    <label for="">Message:</label>
+                                    <textarea placeholder="Message:" style="margin-bottom: 20px;" cols="30" rows="8"></textarea>
+                                    <button style="width: 100%; background-color: #fff; border: 1px solid black;">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer id="footer" class="footer-wrap is-light-text">
+                    <div class="top-footer-wrap">
+                        <div class="top-footer-inner">
+                        </div>
+                    </div>
+                    <div class="footer-inner">
+                        <div class="column-footer-wrap">
+                            <div class="ruby-container row">
+                                <div class="column-footer-inner">
+                                    <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                    </div>
+                                    <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                    </div>
+                                    <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-social-bar-wrap">
+                            <div class="ruby-container">
+                                <div id="footer-copyright" class="footer-copyright-wrap">
+                                    <p>
+                                    <div>
+                                        <p>Copyright © 2024</p>
+                                        <p><a href="./contact.html">Contact Us</a> | <a
+                                            href="./privacy-policy.html">Privacy</a> | <a
+                                            href="./terms-of-service.html">Terms</a></p>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script data-cfasync="false" src="./assets/plugins/email-decode.min.js"></script>
+        <script>
+            setTimeout(function () { Array.prototype.forEach.call(document.querySelectorAll(".ai-viewports"), function (element, index) { ai_insert_viewport(element); }); }, 10);
+        </script>
+        <script type="text/javascript">
+            var look_ruby_to_top = "1";
+        </script>
+        <script defer src="./assets/js/main.js"></script>
+        <div class="cookie-container">
+            <!-- THIS IS OUR COOKIE-->
+            <div class="text">
+                <p class="cookie-subtitle">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</p>
+                <button class="cookie-button">Okay, got it</button>
+            </div>  
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (localStorage.getItem("cookieConsent") == "accepted" && localStorage.getItem("expires") > Date.now()) {
+                    $('.cookie-container').hide();
+                } else {
+                    $('.cookie-container').css("display", "flex");
+                }
+            });
+        </script>
+<script src="./assets/js/gsap.min.js"></script>
+<script src="./assets/js/cookie.js"></script>
+    </body>
+
+</html>

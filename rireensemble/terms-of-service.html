@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-Us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/font.css" rel="stylesheet">
+    <script src="./assets/plugins/jquery-3.3.1.min.js"></script>
+    <link media="all" href="./assets/css/style.css" rel="stylesheet" />
+    <title>terms-of-service</title>
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="generator" content="All in One SEO (AIOSEO) 4.4.9.2" />
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var ai_front = { "insertion_before": "BEFORE", "insertion_after": "AFTER", "insertion_prepend": "PREPEND CONTENT", "insertion_append": "APPEND CONTENT", "insertion_replace_content": "REPLACE CONTENT", "insertion_replace_element": "REPLACE ELEMENT", "cancel": "Cancel", "use": "Use", "add": "Add", "parent": "Parent", "cancel_element_selection": "Cancel element selection", "select_parent_element": "Select parent element", "css_selector": "CSS selector", "use_current_selector": "Use current selector", "element": "ELEMENT", "path": "PATH", "selector": "SELECTOR", "visible": "VISIBLE", "hidden": "HIDDEN" };
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="./assets/js/config.js"></script>
+    <script type="text/javascript">
+        function ai_insert(insertion, selector, insertion_code) {
+            if (selector.indexOf(":eq") != -1) var elements = jQuery(selector); else var elements = document.querySelectorAll(selector); Array.prototype.forEach.call(elements, function (element, index) {
+                var ai_debug = typeof ai_debugging !== "undefined"; if (element.hasAttribute("id")) selector_string = "#" + element.getAttribute("id"); else if (element.hasAttribute("class")) selector_string = "." + element.getAttribute("class").replace(new RegExp(" ", "g"), "."); else selector_string = ""; var template =
+                    document.createElement("div"); template.innerHTML = insertion_code; var ai_selector_counter = template.getElementsByClassName("ai-selector-counter")[0]; if (ai_selector_counter != null) ai_selector_counter.innerText = index + 1; var ai_debug_name_ai_main = template.getElementsByClassName("ai-debug-name ai-main")[0]; if (ai_debug_name_ai_main != null) {
+                        var insertion_name = ""; if (insertion == "before") insertion_name = ai_front.insertion_before; else if (insertion == "after") insertion_name = ai_front.insertion_after; else if (insertion ==
+                            "prepend") insertion_name = ai_front.insertion_prepend; else if (insertion == "append") insertion_name = ai_front.insertion_append; else if (insertion == "replace-content") insertion_name = ai_front.insertion_replace_content; else if (insertion == "replace-element") insertion_name = ai_front.insertion_replace_element; ai_debug_name_ai_main.innerText = insertion_name + " " + selector + " (" + element.tagName.toLowerCase() + selector_string + ")"
+                    } var range = document.createRange(); var fragment = range.createContextualFragment(template.innerHTML);
+                if (insertion == "before") element.parentNode.insertBefore(fragment, element); else if (insertion == "after") element.parentNode.insertBefore(fragment, element.nextSibling); else if (insertion == "prepend") element.insertBefore(fragment, element.firstChild); else if (insertion == "append") element.insertBefore(fragment, null); else if (insertion == "replace-content") element.innerHTML = template.innerHTML; else if (insertion == "replace-element") { element.parentNode.insertBefore(fragment, element); element.parentNode.removeChild(element) } if (ai_debug) console.log("AI INSERT",
+                    insertion, selector, "(" + element.tagName.toLowerCase() + selector_string + ")")
+            })
+        }
+        function ai_insert_viewport(element) {
+            function hasClass(element, cls) { if (element == null) return false; if (element.classList) return element.classList.contains(cls); else return (" " + element.className + " ").indexOf(" " + cls + " ") > -1 } function addClass(element, cls) { if (element == null) return; if (element.classList) element.classList.add(cls); else element.className += " " + cls } function removeClass(element, cls) {
+                if (element == null) return; if (element.classList) element.classList.remove(cls); else element.className = element.className.replace(new RegExp("(^|\\b)" +
+                    cls.split(" ").join("|") + "(\\b|$)", "gi"), " ")
+            } var ai_debug = typeof ai_debugging !== "undefined"; if (ai_debug) console.log("AI VIEWPORT INSERTION class:", element.getAttribute("class")); var visible = !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length); var block = element.getAttribute("data-block"); if (visible) {
+                var insertion_code = element.getAttribute("data-code"); var insertion_type = element.getAttribute("data-insertion"); var selector = element.getAttribute("data-selector"); if (insertion_code !=
+                    null) if (insertion_type != null && selector != null) { var selector_exists = document.querySelectorAll(selector).length; if (ai_debug) console.log("AI VIEWPORT VISIBLE: block", block, insertion_type, selector, selector_exists ? "" : "NOT FOUND"); if (selector_exists) { ai_insert(insertion_type, selector, b64d(insertion_code)); removeClass(element, "ai-viewports") } } else {
+                        if (ai_debug) console.log("AI VIEWPORT VISIBLE: block", block); var range = document.createRange(); var fragment = range.createContextualFragment(b64d(insertion_code));
+                        element.parentNode.insertBefore(fragment, element.nextSibling); removeClass(element, "ai-viewports")
+                    }
+            } else { if (ai_debug) console.log("AI VIEWPORT NOT VISIBLE: block", block); var debug_bar = element.previousElementSibling; if (hasClass(debug_bar, "ai-debug-bar") && hasClass(debug_bar, "ai-debug-script")) { removeClass(debug_bar, "ai-debug-script"); addClass(debug_bar, "ai-debug-viewport-invisible") } removeClass(element, "ai-viewports") }
+        }
+        function b64e(str) { return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) { return String.fromCharCode("0x" + p1) })) } function b64d(str) { return decodeURIComponent(atob(str).split("").map(function (c) { return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2) }).join("")) };
+    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MR5SQCC');
+    </script>
+
+    <script type="text/javascript">
+        window._tfa = window._tfa || [];
+        window._tfa.push({ notify: 'event', name: 'page_view', id: 1431958 });
+        !function (t, f, a, x) {
+            if (!document.getElementById(x)) {
+                t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
+            }
+        }(document.createElement('script'),
+            document.getElementsByTagName('script')[0],
+            './assets/js/tfa.js',
+            'tb_tfa_script');
+    </script>
+
+    <script type="text/javascript">
+        var touchmoved;
+        $('.previous-page-link').on('touchend', function (e) {
+            if (touchmoved != true) {
+                console.log('redirect');
+                window.location.href = document.getElementById("previous-page-link").href;
+            }
+        }).on('touchmove', function (e) {
+            touchmoved = true;
+        }).on('touchstart', function () {
+            touchmoved = false;
+        });
+        var touchmoved2;
+        $('.next-page-link').on('touchend', function (e) {
+            if (touchmoved2 != true) {
+                console.log('redirect');
+                window.location.href = document.getElementById("next-page-link").href;
+            }
+        }).on('touchmove', function (e) {
+            touchmoved2 = true;
+        }).on('touchstart', function () {
+            touchmoved2 = false;
+        });
+    </script>
+
+    <script async src="assets/js/gtag.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GY3DPLMNQF');
+    </script>
+</head>
+
+<body class="page-template-default page page-id-11776 ruby-body is-full-width is-social-tooltip">
+    <div class="main-site-outer">
+        <div class="header-outer header-style-1">
+            <div class="header-wrap">
+                <div class="header-banner-wrap clearfix">
+                    <div class="header-logo-wrap">
+                        <a class="logo-image" href="./index.html">
+                            <img class="logo-img-data" data-no-retina
+                                srcset="assets/img/photo_6273521007302130968_y.jpg 1x, assets/img/photo_6273521007302130968_y.jpg 2x"
+                                src="assets/img/photo_6273521007302130968_y.jpg" alt="starentertainmenthub" style="max-height: 150px" height="150"
+                                width="1005" />
+                        </a>
+                        <h1 class="logo-title" style="display:none">starentertainmenthub</h1>
+                        <meta itemprop="name" content="starentertainmenthub">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-site-wrap">
+            <div class="main-site-mask"></div>
+            <div id="ruby-site-content" class="main-site-content-wrap clearfix">
+                <div class="ruby-page-wrap ruby-section row single-wrap is-sidebar-none ruby-container">
+                    <div class="ruby-content-wrap single-inner content-without-sidebar col-xs-12">
+                        <article id="post-7702" class="post-7702 page type-page status-publish hentry">
+                            <header class="entry-header">
+                                <h1 class="entry-title">Terms and Conditions</h1>
+                            </header>
+                            <div class="entry-content">
+                                <p>Welcome to starentertainmenthub!</p>
+                                <p>These terms and conditions outline the rules and regulations for the use of NAUTILUS MARKETING LTD 's Website, located at starentertainmenthub.com.</p>
+                                <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use starentertainmenthub if you do not agree to take all of the terms and conditions stated on this page.</p>
+                                <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to, prevailing law of gb. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+                                <p><strong>Cookies</strong><br>
+                                    We employ the use of cookies. By accessing starentertainmenthub, you agreed to use cookies in agreement with the NAUTILUS MARKETING LTD 's Privacy Policy.</p>
+                                <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+                                </p>
+                                <p><strong>License</strong><br>
+                                    Unless otherwise stated, NAUTILUS MARKETING LTD and/or its licensors own the intellectual property rights for all material on starentertainmenthub. All intellectual property rights are reserved. You may access this from starentertainmenthub for your own personal use subjected to restrictions set in these terms and conditions.</p>
+                                <p>You must not:</p>
+                                <p style="margin-left: 20px;">
+                                    Republish material from starentertainmenthub <br>
+                                    Sell, rent or sub-license material from starentertainmenthub <br>
+                                    Reproduce, duplicate or copy material from starentertainmenthub <br>
+                                    Redistribute content from starentertainmenthub <br>
+                                </p>
+                                <p>This Agreement shall begin on the date hereof. </p>
+                                <p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. NAUTILUS MARKETING LTD does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of NAUTILUS MARKETING LTD ,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, NAUTILUS MARKETING LTD shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.</p>
+                                <p>NAUTILUS MARKETING LTD reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or causes breach of these Terms and Conditions.</p>
+                                <p>You warrant and represent that:</p>
+                                <p style="margin-left: 20px;">
+                                    You are entitled to post the Comments on our website and have all necessary licenses and consents to do so; <br>
+                                    The Comments do not invade any intellectual property right, including without limitation copyright, patent or trademark of any third party; <br>
+                                    The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material which is an invasion of privacy <br>
+                                    The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity. <br>
+                                </p>
+                                <p>You hereby grant NAUTILUS MARKETING LTD a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.</p>
+                                
+                                <p><strong>Hyperlinking to our Content</strong><br>
+                                    The following organizations may link to our Website without prior written approval:</p>
+                                <p style="margin-left: 20px;">
+                                    Government agencies; <br>
+                                    Search engines; <br>
+                                    News organizations; <br>
+                                    Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; <br>
+                                    System wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Web site. <br>
+                                </p>
+                                <p>These organizations may link to our home page, to publications or to other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party's site.</p>
+                                <p>We may consider and approve other link requests from the following types of organizations:</p>
+                                <p style="margin-left: 20px;">
+                                    commonly-known consumer and/or business information sources; <br>
+                                    dot.com community sites; <br>
+                                    associations or other groups representing charities; <br>
+                                    online directory distributors; <br>
+                                    internet portals; <br>
+                                    accounting, law and consulting firms; and <br>
+                                    educational institutions and trade associations. <br>
+                                </p>
+                                <p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of NAUTILUS MARKETING LTD ; and (d) the link is in the context of general resource information.</p>
+                                <p>These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c) fits within the context of the linking party's site.</p>
+                                <p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to NAUTILUS MARKETING LTD . Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
+                                <p>Approved organizations may hyperlink to our Website as follows:</p>
+                                <p style="margin-left: 20px;">
+                                    By use of our corporate name; or <br>
+                                    By use of the uniform resource locator being linked to; or <br>
+                                    By use of any other description of our Website being linked to that makes sense within the context and format of content on the linking party's site. <br>
+                                </p>
+                                <p>No use of NAUTILUS MARKETING LTD 's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
+                                <p><strong>iFrames</strong><br>
+                                    Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.
+                                </p>
+                                <p><strong>Content Liability</strong><br>
+                                    We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
+                                </p>
+                                <p><strong>Reservation of Rights</strong><br>
+                                    We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it's linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
+                                </p>
+                                <p><strong>Removal of links from our website</strong><br>
+                                    WIf you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
+                                </p>
+                                <p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
+                                <p><strong>Disclaimer</strong><br>
+                                    To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:
+                                </p>
+                                <p style="margin-left: 20px;">
+                                    limit or exclude our or your liability for death or personal injury; <br>
+                                    limit or exclude our or your liability for fraud or fraudulent misrepresentation; <br>
+                                    limit any of our or your liabilities in any way that is not permitted under applicable law; or <br>
+                                    exclude any of our or your liabilities that may not be excluded under applicable law. <br>
+                                </p>
+                                <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
+                                <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+                            </div>
+                            <footer class="entry-footer">
+                            </footer>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="footer-wrap is-light-text">
+                <div class="top-footer-wrap">
+                    <div class="top-footer-inner">
+                    </div>
+                </div>
+                <div class="footer-inner">
+                    <div class="column-footer-wrap">
+                        <div class="ruby-container row">
+                            <div class="column-footer-inner">
+                                <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                </div>
+                                <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                </div>
+                                <div class="sidebar-footer sidebar-wrap col-sm-4 col-xs-12" role="complementary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-social-bar-wrap">
+                        <div class="ruby-container">
+                            <div id="footer-copyright" class="footer-copyright-wrap">
+                                <p>
+                                <div>
+                                    <p>Copyright © 2024</p>
+                                    <p><a href="./contact.html">Contact Us</a> | <a
+                                            href="./privacy-policy.html">Privacy</a> | <a
+                                            href="./terms-of-service.html">Terms</a></p>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script data-cfasync="false" src="./assets/plugins/email-decode.min.js"></script>
+    <script>
+        setTimeout(function () { Array.prototype.forEach.call(document.querySelectorAll(".ai-viewports"), function (element, index) { ai_insert_viewport(element); }); }, 10);
+    </script>
+    <script type="text/javascript">
+        var look_ruby_to_top = "1";
+    </script>
+    <script defer src="./assets/js/main.js"></script>
+<div class="cookie-container">
+            <!-- THIS IS OUR COOKIE-->
+            <div class="text">
+                <p class="cookie-subtitle">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</p>
+                <button class="cookie-button">Okay, got it</button>
+            </div>  
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (localStorage.getItem("cookieConsent") == "accepted" && localStorage.getItem("expires") > Date.now()) {
+                    $('.cookie-container').hide();
+                } else {
+                    $('.cookie-container').css("display", "flex");
+                }
+            });
+        </script>
+<script src="./assets/js/gsap.min.js"></script>
+<script src="./assets/js/cookie.js"></script>
+</body>
+
+</html>
