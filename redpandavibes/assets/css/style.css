@@ -3,7 +3,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
-    font-family: Open Sans,helvetica,arial,sans-serif
+    font-family: Open Sans,helvetica,arial,sans-serif;
+    background-color: rgb(215, 230, 200) !important;
 }
 
 .code-block-19 {

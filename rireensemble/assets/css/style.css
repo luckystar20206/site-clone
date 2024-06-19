@@ -3,7 +3,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 body {
-    font-family: Open Sans,helvetica,arial,sans-serif
+    font-family: Open Sans,helvetica,arial,sans-serif;
+    background-color: #e7d7d7 !important;
 }
 
 .code-block-19 {
@@ -14001,7 +14002,7 @@ body {
 }
 
 .ruby-container {
-    max-width: 100% !important
+    max-width: 80% !important
 }
 
 #ai_widget-6 {
